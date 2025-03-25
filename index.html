@@ -17,21 +17,20 @@
     <button onclick="multiply()">Ko'paytirish (*)</button>
     <button onclick="divide()">Bo'lish (/)</button>
     <button onclick="sqrt()">Ildiz osti</button>
-    <button onclick="gcd()">EKUB</button>
+    <button onclick="showGcd()">EKUB</button>
     <button onclick="lcm()">EKUK</button>
     
     <input type="text" id="result" placeholder="Natija" readonly>
 
     <script>
         // Qo'shish
-        function add() {
-            let num1 = parseFloat(document.getElementById("input1").value);
-            let num2 = parseFloat(document.getElementById("input2").value);
-            let result = num1 + num2;
+       function add() {
+        let num1 = parseFloat(document.getElementById("input1").value)
+        let num2 = parseFloat(doc.getElementById("input2").value)
+        let result = num1 +num2;
 
-            document.getElementById("result").value = result; // Natijani to'g'ri joyga chiqarish
-        }
-
+        document.getElementById("result").value = result;
+       }
         // Ayirish
         function subtract() {
             let num1 = parseFloat(document.getElementById("input1").value);
@@ -71,15 +70,14 @@
             }
         }
 
-        // EKUB (Eng katta umumiy bo'luvchi)
        // EKUB (Eng katta umumiy bo‘luvchi) - parametrlar bilan
-function gcd(a, b) {
-    while (b !== 0) {
-        let temp = b;
-        b = a % b;
-        a = temp;
+function gcd(num1, num2) {
+    while (num2 !== 0) {
+        let temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
     }
-    return a; // Natijani qaytarish kerak
+    return num1; // Natijani qaytarish kerak
 }
 
 // EKUB natijani ekranga chiqarish
@@ -98,7 +96,7 @@ function lcm() {
     let result = (num1 * num2) / gcd(num1, num2); // gcd funksiyasini to‘g‘ri chaqirish
     document.getElementById("result").value = result;
 }
-
     </script>
+    
 </body>
 </html>
