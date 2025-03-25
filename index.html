@@ -24,13 +24,13 @@
 
     <script>
         // Qo'shish
-     function add() {
-    let num1 = parseFloat(document.getElementById("input1").value);
-    let num2 = parseFloat(document.getElementById("input2").value);
-    let result = num1 + num2;
+        function add() {
+            let num1 = parseFloat(document.getElementById("input1").value);
+            let num2 = parseFloat(document.getElementById("input2").value);
+            let result = num1 + num2;
 
-    document.getElementById("input3").value = result;
-}
+            document.getElementById("result").value = result; // Natijani to'g'ri joyga chiqarish
+        }
 
         // Ayirish
         function subtract() {
@@ -72,17 +72,19 @@
         }
 
         // EKUB (Eng katta umumiy bo'luvchi)
-        function gcd() {
-            let num1 = parseInt(document.getElementById("input1").value);
-            let num2 = parseInt(document.getElementById("input2").value);
-
+        function gcd(num1, num2) {
             while (num2 !== 0) {
                 let temp = num2;
                 num2 = num1 % num2;
                 num1 = temp;
             }
+            return num1;
+        }
 
-            document.getElementById("result").value = num1;
+        function findGCD() {
+            let num1 = parseInt(document.getElementById("input1").value);
+            let num2 = parseInt(document.getElementById("input2").value);
+            document.getElementById("result").value = gcd(num1, num2);
         }
 
         // EKUK (Eng kichik umumiy ko'paytma)
@@ -90,10 +92,9 @@
             let num1 = parseInt(document.getElementById("input1").value);
             let num2 = parseInt(document.getElementById("input2").value);
 
-            let result = (num1 * num2) / gcd(num1, num2);
+            let result = (num1 * num2) / gcd(num1, num2); // To'g'ri yozilgan EKUK formulasi
             document.getElementById("result").value = result;
         }
     </script>
-    
 </body>
 </html>
