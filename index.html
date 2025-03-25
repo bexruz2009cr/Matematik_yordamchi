@@ -72,29 +72,33 @@
         }
 
         // EKUB (Eng katta umumiy bo'luvchi)
-        function gcd(num1, num2) {
-            while (num2 !== 0) {
-                let temp = num2;
-                num2 = num1 % num2;
-                num1 = temp;
-            }
-            return num1;
-        }
+       // EKUB (Eng katta umumiy bo‘luvchi) - parametrlar bilan
+function gcd(a, b) {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a; // Natijani qaytarish kerak
+}
 
-        function findGCD() {
-            let num1 = parseInt(document.getElementById("input1").value);
-            let num2 = parseInt(document.getElementById("input2").value);
-            document.getElementById("result").value = gcd(num1, num2);
-        }
+// EKUB natijani ekranga chiqarish
+function showGcd() {
+    let num1 = parseInt(document.getElementById("input1").value);
+    let num2 = parseInt(document.getElementById("input2").value);
+    
+    document.getElementById("result").value = gcd(num1, num2); // gcd natijasini chiqarish
+}
 
-        // EKUK (Eng kichik umumiy ko'paytma)
-        function lcm() {
-            let num1 = parseInt(document.getElementById("input1").value);
-            let num2 = parseInt(document.getElementById("input2").value);
+// EKUK (Eng kichik umumiy ko‘paytma)
+function lcm() {
+    let num1 = parseInt(document.getElementById("input1").value);
+    let num2 = parseInt(document.getElementById("input2").value);
 
-            let result = (num1 * num2) / gcd(num1, num2); // To'g'ri yozilgan EKUK formulasi
-            document.getElementById("result").value = result;
-        }
+    let result = (num1 * num2) / gcd(num1, num2); // gcd funksiyasini to‘g‘ri chaqirish
+    document.getElementById("result").value = result;
+}
+
     </script>
 </body>
 </html>
