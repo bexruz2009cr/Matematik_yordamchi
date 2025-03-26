@@ -19,10 +19,19 @@
     <button onclick="sqrt()">Ildiz osti</button>
     <button onclick="showGcd()">EKUB</button>
     <button onclick="lcm()">EKUK</button>
+    <button onclick="pow">Daraja</button>
     
     <input type="text" id="result" placeholder="Natija" readonly>
 
     <script>
+     //Daraja
+        function pow() {
+           let num1 = parseFloat(document.getElementById("input1").value)
+           let num2 = parseFloat(document.getElementById("input2").value) 
+            let result =Math.pow(num1,num2)
+
+            document.getElementById("result").value = result;
+        
         // Qo'shish
        function add() {
         let num1 = parseFloat(document.getElementById("input1").value)
