@@ -7,24 +7,29 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <audio id="sound" src="./mixkit-classic-click-1117.wav"></audio>
     <h2>Matematik amallarni bajarish</h2>
     
-    <!-- Audio faylni loyiha papkasiga joylang -->
-    <audio id="sound" src="./mixkit-classic-click-1117.wav"></audio>
-
-    <input type="number" id="input1" placeholder="Birinchi sonni kiriting">
-    <input type="number" id="input2" placeholder="Ikkinchi sonni kiriting">
+   
     
-    <button onclick="add()">Qo'shish (+)</button>
-    <button onclick="subtract()">Ayirish (-)</button>
-    <button onclick="multiply()">Ko'paytirish (*)</button>
-    <button onclick="divide()">Bo'lish (/)</button>
-    <button onclick="sqrt()">Ildiz osti</button>
-    <button onclick="showGcd()">EKUB</button>
-    <button onclick="lcm()">EKUK</button>
-    <button onclick="pow()">Daraja</button>
+    <div class="container">
+        <div class="input-section">
+            <input type="number" id="input1" placeholder="Birinchi sonni kiriting">
+            <input type="number" id="input2" placeholder="Ikkinchi sonni kiriting">
+            <input type="text" id="result" placeholder="Natija" readonly>
+        </div>
+        <div class="button-section">
+            <button onclick="add()">Qo'shish (+)</button>
+            <button onclick="subtract()">Ayirish (-)</button>
+            <button onclick="multiply()">Ko'paytirish (*)</button>
+            <button onclick="divide()">Bo'lish (/)</button>
+            <button onclick="sqrt()">Ildiz osti</button>
+            <button onclick="showGcd()">EKUB</button>
+            <button onclick="lcm()">EKUK</button>
+            <button onclick="pow()">Daraja</button>
+        </div>
+    </div>
     
-    <input type="text" id="result" placeholder="Natija" readonly>
 
     <script>
         function playSound() {
