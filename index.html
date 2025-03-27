@@ -19,27 +19,19 @@
     <button onclick="sqrt()">Ildiz osti</button>
     <button onclick="showGcd()">EKUB</button>
     <button onclick="lcm()">EKUK</button>
-    <button onclick="pow">Daraja</button>
+    <button onclick="pow()">Daraja</button>
     
     <input type="text" id="result" placeholder="Natija" readonly>
 
     <script>
-     //Daraja
-        function pow() {
-           let num1 = parseFloat(document.getElementById("input1").value)
-           let num2 = parseFloat(document.getElementById("input2").value) 
-            let result =Math.pow(num1,num2)
-
-            document.getElementById("result").value = result;
-        
         // Qo'shish
-       function add() {
-        let num1 = parseFloat(document.getElementById("input1").value)
-        let num2 = parseFloat(document.getElementById("input2").value)
-        let result = num1 +num2;
+        function add() {
+            let num1 = parseFloat(document.getElementById("input1").value);
+            let num2 = parseFloat(document.getElementById("input2").value);
+            let result = num1 + num2;
+            document.getElementById("result").value = result;
+        }
 
-        document.getElementById("result").value = result;
-       }
         // Ayirish
         function subtract() {
             let num1 = parseFloat(document.getElementById("input1").value);
@@ -79,33 +71,38 @@
             }
         }
 
-       // EKUB (Eng katta umumiy bo‘luvchi) - parametrlar bilan
-function gcd(num1, num2) {
-    while (num2 !== 0) {
-        let temp = num2;
-        num2 = num1 % num2;
-        num1 = temp;
-    }
-    return num1; // Natijani qaytarish kerak
-}
+        // Daraja
+        function pow() {
+            let num1 = parseFloat(document.getElementById("input1").value);
+            let num2 = parseFloat(document.getElementById("input2").value);
+            let result = Math.pow(num1, num2);
+            document.getElementById("result").value = result;
+        }
 
-// EKUB natijani ekranga chiqarish
-function showGcd() {
-    let num1 = parseInt(document.getElementById("input1").value);
-    let num2 = parseInt(document.getElementById("input2").value);
-    
-    document.getElementById("result").value = gcd(num1, num2); // gcd natijasini chiqarish
-}
+        // EKUB (Eng katta umumiy bo‘luvchi)
+        function gcd(num1, num2) {
+            while (num2 !== 0) {
+                let temp = num2;
+                num2 = num1 % num2;
+                num1 = temp;
+            }
+            return num1;
+        }
 
-// EKUK (Eng kichik umumiy ko‘paytma)
-function lcm() {
-    let num1 = parseInt(document.getElementById("input1").value);
-    let num2 = parseInt(document.getElementById("input2").value);
+        // EKUB natijani ekranga chiqarish
+        function showGcd() {
+            let num1 = parseInt(document.getElementById("input1").value);
+            let num2 = parseInt(document.getElementById("input2").value);
+            document.getElementById("result").value = gcd(num1, num2);
+        }
 
-    let result = (num1 * num2) / gcd(num1, num2); // gcd funksiyasini to‘g‘ri chaqirish
-    document.getElementById("result").value = result;
-}
+        // EKUK (Eng kichik umumiy ko‘paytma)
+        function lcm() {
+            let num1 = parseInt(document.getElementById("input1").value);
+            let num2 = parseInt(document.getElementById("input2").value);
+            let result = (num1 * num2) / gcd(num1, num2);
+            document.getElementById("result").value = result;
+        }
     </script>
-    
 </body>
 </html>
