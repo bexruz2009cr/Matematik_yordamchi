@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matematik Hisoblash</title>
     <link rel="stylesheet" href="index.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <audio id="sound" src="./mixkit-classic-click-1117.wav"></audio>
     <h2>Matematik amallarni bajarish</h2>
-    
-   
     
     <div class="container">
         <div class="input-section">
@@ -29,93 +28,5 @@
             <button onclick="pow()">Daraja</button>
         </div>
     </div>
-    
-
-    <script>
-        function playSound() {
-            let sound = document.getElementById("sound");
-            sound.currentTime = 0;
-            sound.play().catch(error => console.log("Ovoz o'ynatmadi: ", error));
-        }
-
-        function add() {
-            let num1 = parseFloat(document.getElementById("input1").value);
-            let num2 = parseFloat(document.getElementById("input2").value);
-            let result = num1 + num2;
-            document.getElementById("result").value = result;
-            playSound();
-        }
-
-        function subtract() {
-            let num1 = parseFloat(document.getElementById("input1").value);
-            let num2 = parseFloat(document.getElementById("input2").value);
-            let result = num1 - num2;
-            document.getElementById("result").value = result;
-            playSound();
-        }
-
-        function multiply() {
-            let num1 = parseFloat(document.getElementById("input1").value);
-            let num2 = parseFloat(document.getElementById("input2").value);
-            let result = num1 * num2;
-            document.getElementById("result").value = result;
-            playSound();
-        }
-
-        function divide() {
-            let num1 = parseFloat(document.getElementById("input1").value);
-            let num2 = parseFloat(document.getElementById("input2").value);
-            if (num2 !== 0) {
-                let result = num1 / num2;
-                document.getElementById("result").value = result;
-            } else {
-                document.getElementById("result").value = "Xato: Nolga bo'lish mumkin emas";
-            }
-            playSound();
-        }
-
-        function sqrt() {
-            let num = parseFloat(document.getElementById("input1").value);
-            if (num >= 0) {
-                let result = Math.sqrt(num);
-                document.getElementById("result").value = result;
-            } else {
-                document.getElementById("result").value = "Ildiz osti faqat musbat sonlar uchun";
-            }
-            playSound();
-        }
-
-        function pow() {
-            let num1 = parseFloat(document.getElementById("input1").value);
-            let num2 = parseFloat(document.getElementById("input2").value);
-            let result = Math.pow(num1, num2);
-            document.getElementById("result").value = result;
-            playSound();
-        }
-
-        function gcd(num1, num2) {
-            while (num2 !== 0) {
-                let temp = num2;
-                num2 = num1 % num2;
-                num1 = temp;
-            }
-            return num1;
-        }
-
-        function showGcd() {
-            let num1 = parseInt(document.getElementById("input1").value);
-            let num2 = parseInt(document.getElementById("input2").value);
-            document.getElementById("result").value = gcd(num1, num2);
-            playSound();
-        }
-
-        function lcm() {
-            let num1 = parseInt(document.getElementById("input1").value);
-            let num2 = parseInt(document.getElementById("input2").value);
-            let result = (num1 * num2) / gcd(num1, num2);
-            document.getElementById("result").value = result;
-            playSound();
-        }
-    </script>
 </body>
 </html>
